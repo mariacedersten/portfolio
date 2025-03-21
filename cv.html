@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_cv – Maria Cedersten</title>
+
+    <!-- Подключение шрифтов Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Adamina&family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Иконка сайта (favicon) -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <style>
+      /* Сброс и базовые стили */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: "Adamina", serif;
+        background-color: rgb(255, 253, 246); /* Цвет фона */
+        color: black;
+        font-size: 15px;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Шапка */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 80px;
+      }
+
+      /* Лого-кнопка для возврата на главную страницу */
+      header .logo a {
+        display: inline-block; /* Чтобы элемент был блочным для увеличения */
+        padding: 10px;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease-in-out; /* добавляет плавный переход для изменения масштаба изображения */
+      }
+
+      /* Эффект при наведении */
+      header .logo a:hover {
+        transform: scale(1.2); /* Увеличение размера при наведении */
+      }
+
+      header .logo strong {
+        font-family: "Abril Fatface", serif;
+        font-size: 32px;
+        font-weight: normal;
+      }
+
+      nav {
+        display: flex;
+        gap: 40px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: 400;
+        transition: 0.3s;
+        font-size: 15px;
+      }
+
+      nav a.active strong {
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        transform: scale(1.2); /* Увеличение размера при наведении */
+      }
+
+      /* Выделение активного пункта меню */
+      .active {
+        font-weight: 700; /* жирное выделение */
+      }
+
+      /* Основной контент */
+      .content {
+        flex: 1;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px 20px 60px;
+      }
+
+      .content h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-family: "Abril Fatface", serif;
+        font-size: 32px;
+        font-weight: normal;
+      }
+
+      .content h2 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      /* Стиль для блоков с датами и описанием */
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: 200px auto; /* Левая колонка фиксированная, правая растягивается */
+        gap: 10px;
+      }
+
+      .column-left {
+        font-family: "Playfair Display", serif;
+        font-variant-numeric: tabular-nums;
+        text-align: left;
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .column-right {
+        text-align: left;
+        font-family: Arial, sans-serif;
+      }
+
+      .grid-container2 {
+        display: grid;
+        grid-template-columns: 200px 120px 120px; /* Одна пустая колонка слева, затем две равные */
+        gap: 10px;
+      }
+
+      .column-middle,
+      .column-right {
+        text-align: left; /* Выравнивание текста */
+      }
+      /* Футер (как в дизайне первой страницы) */
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 80px;
+        color: black;
+        font-size: 15px;
+      }
+
+      .footer p {
+        margin: 5px 0;
+      }
+
+      .footer .contact-info {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+      }
+
+      /* Адаптив */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 10px;
+          padding: 20px;
+          text-align: center;
+        }
+
+        nav {
+          justify-content: center;
+        }
+
+        .content {
+          padding: 20px;
+        }
+
+        .footer {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+          padding: 20px;
+        }
+
+        .footer .contact-info {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Шапка -->
+    <header>
+      <!-- Лого со ссылкой на главную -->
+      <div class="logo">
+        <a href="index.html">
+          <strong>Maria Cedersten</strong>
+        </a>
+      </div>
+      <nav>
+        <!-- Пункт меню "CV" отмечен как активный -->
+        <a href="#" class="active"><strong>CV</strong></a>
+        <a href="projects.html">Portfolio</a>
+        <a href="contact.html">Yhteystiedot</a>
+      </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <div class="content">
+      <h1>CV</h1>
+
+      <!-- Koulutus -->
+      <h2>KOULUTUS</h2>
+      <div class="grid-container">
+        <div class="column-left">
+          <p>2024 –</p>
+        </div>
+        <div class="column-right">
+          <p>
+            <b> Business College Helsinki.</b> Tieto- ja viestintätekniikan
+            perustutkinto. Koodaajakoulutus – ASP.NET, C#, JavaScript & React
+          </p>
+        </div>
+
+        <div class="column-left">
+          <p>2023 – 2024</p>
+        </div>
+        <div class="column-right">
+          <p>
+            <b>Borgå folkakademi i Helsingfors.</b> Ruotsin kielen
+            intensiivikurssi.
+          </p>
+        </div>
+
+        <div class="column-left">
+          <p>2018 – 2023</p>
+        </div>
+        <div class="column-right">
+          <p><b>Metropolia korkeakoulu.</b> Rakennusarkkitehti.</p>
+        </div>
+
+        <div class="column-left">
+          <p>2017 – 2018</p>
+        </div>
+        <div class="column-right">
+          <p><b>Kanneljärven opisto.</b> Kuvataidelinja.</p>
+          <p><b>Lapin yliopisto.</b> Avoimet kuvataidekurssit 21 op.</p>
+        </div>
+        <div class="column-left">
+          <p>2013 –</p>
+        </div>
+        <div class="column-right">
+          <p>
+            <b>Tampereen teknillinen yliopisto.</b> Diplomi-insinöörin tutkinto.
+            Koulutusohjelma: rakennustekniikan DI-tutkinto-ohjelma 55/120 op.
+          </p>
+        </div>
+        <div class="column-left">
+          <p>2002 – 2007</p>
+        </div>
+        <div class="column-right">
+          <p>
+            <b>Petroskoin valtion yliopisto.</b> Rakennusinsinööri. Siviili- ja
+            teollisuusrakentaminen. Pääaine: rakennuksien ja rakenteiden
+            rekonstruointi.
+          </p>
+        </div>
+        <div class="column-left">
+          <p>1998 – 2001</p>
+        </div>
+        <div class="column-right">
+          <p><b>Petroskoin rakennusopisto.</b> Tekninen arkkitehti.</p>
+        </div>
+      </div>
+
+      <!-- Työkokemus -->
+      <h2>TYÖKOKEMUS</h2>
+      <div class="grid-container">
+        <div class="column-left">
+          <p>01.02.2022 - 28.02.2023</p>
+        </div>
+        <div class="column-right">
+          <p><b>Sankari Arkkitehdit Oy,</b> Helsinki. Arkkitehti.</p>
+        </div>
+        <div class="column-left">
+          <p>04.05.2021 - 31.07.2021</p>
+        </div>
+        <div class="column-right">
+          <p><b>Mer Arkkitehdit OY,</b> Helsinki. Arkkitehti</p>
+        </div>
+        <div class="column-left">
+          <p>27.05.2019 - 15.07.2019</p>
+        </div>
+        <div class="column-right">
+          <p><b>J-Rake OY,</b> Lohja. Rakennustyömaaharjoittelija.</p>
+        </div>
+        <div class="column-left">
+          <p>01.08.2016 - 10.08.2017</p>
+        </div>
+        <div class="column-right">
+          <p>
+            <b>ME-Perustukset OY,</b>ME-Perustukset OY, Vantaa.
+            Suunnitteluinsinööri.
+          </p>
+        </div>
+        <div class="column-left">
+          <p>01.01.2010 - 15.04.2016</p>
+        </div>
+        <div class="column-right">
+          <p><b>Tanskanen OY,</b> Savonlinna. Suunnitteluinsinööri.</p>
+        </div>
+        <div class="column-left">
+          <p>15.04.2008 - 31.12.2009</p>
+        </div>
+        <div class="column-right">
+          <p><b>Kulmalan Tila,</b> Sulkava. Apulainen.</p>
+        </div>
+        <div class="column-left">
+          <p>10.11.2007 - 10.04.2008</p>
+        </div>
+        <div class="column-right">
+          <p>
+            <b>Finkarstroi ltd.</b> Venäjä, Petroskoi. Suunnitteluinsinööri.
+          </p>
+        </div>
+        <div class="column-left">
+          <p>01.03.2005 - 01.03.2007</p>
+        </div>
+        <div class="column-right">
+          <p>
+            <b>Petroskoin valtionyliopisto,</b> rakennustiedekunta.
+            Arkkitehtuurin, rakennusrakenteiden ja geotekniikan laitoksen
+            vanhempi tutkimusapulainen.
+          </p>
+        </div>
+      </div>
+
+      <!-- IT-taidot -->
+      <h2>IT-TAIDOT</h2>
+      <div class="grid-container">
+        <div class="column-left"></div>
+        <div class="column-right">
+          <p>
+            ArchiCAD, Revit, Photoshop, AutoCAD, Microsoft Office, HTML, CSS,
+            C#, JavaScript, React, SQL, ASP.NET
+          </p>
+        </div>
+      </div>
+
+      <!-- Kielitaidot -->
+      <h2>KIELITAIDOT</h2>
+      <div class="grid-container2">
+        <div class="column-left"></div>
+        <div class="column-middle">
+          <p>Venäjä</p>
+        </div>
+        <div class="column-right">
+          <p>äidinkieli</p>
+        </div>
+        <div class="column-left"></div>
+        <div class="column-middle">
+          <p>Suomi</p>
+        </div>
+        <div class="column-right">
+          <p>sujuva</p>
+        </div>
+        <div class="column-left"></div>
+        <div class="column-middle">
+          <p>Englanti</p>
+        </div>
+        <div class="column-right">
+          <p>sujuva</p>
+        </div>
+        <div class="column-left"></div>
+        <div class="column-middle">
+          <p>Ruotsi</p>
+        </div>
+        <div class="column-right">
+          <p>hyvä</p>
+        </div>
+      </div>
+
+      <!-- Harrastukset -->
+      <h2>HARRASTUKSET</h2>
+      <div class="grid-container">
+        <div class="column-left"></div>
+        <div class="column-right">
+          <p>
+            Lukeminen, kauniisti kuvitettujen kirjojen keräily, rauhalliset
+            kävelyt merenrannalla, matkustaminen sekä rakentamiseen ja
+            arkkitehtuuriin liittyvien ohjelmien inspiroiva katselu.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Футер (как в дизайне первой страницы) -->
+    <div class="footer">
+      <p>Maria Cedersten</p>
+      <p>Copyright © 2025 Maria Cedersten</p>
+      <div class="contact-info">
+        <p>+348456931300</p>
+        <p>
+          <a href="mailto:maria.cedersten@gmail.com"
+            >maria.cedersten@gmail.com</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

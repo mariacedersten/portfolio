@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>projects – Maria Cedersten</title>
+
+    <!-- Подключение шрифтов Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Adamina&family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Иконка сайта (favicon) -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <style>
+      /* Сброс и базовые стили */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: "Adamina", serif;
+        background-color: rgb(255, 253, 246); /* Цвет фона */
+        color: black;
+        font-size: 15px;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Шапка */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 80px;
+      }
+
+      /* Лого-кнопка для возврата на главную страницу */
+      header .logo a {
+        display: inline-block; /* Чтобы элемент был блочным для увеличения */
+        padding: 10px;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease-in-out; /* добавляет плавный переход для изменения масштаба изображения */
+      }
+
+      /* Эффект при наведении */
+      header .logo a:hover {
+        transform: scale(1.2); /* Увеличение размера при наведении */
+      }
+
+      header .logo strong {
+        font-family: "Abril Fatface", serif;
+        font-size: 32px;
+        font-weight: normal;
+      }
+
+      nav {
+        display: flex;
+        gap: 40px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: 400;
+        transition: 0.3s;
+        font-size: 15px;
+      }
+
+      nav a:hover {
+        transform: scale(1.2); /* Увеличение размера при наведении */
+      }
+
+      /* Выделение активного пункта меню */
+      .active {
+        font-weight: 700; /* жирное выделение */
+      }
+
+      /* Основной контент */
+      .content {
+        flex: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 20px 60px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-family: "Abril Fatface", serif;
+        font-size: 32px;
+        font-weight: normal;
+      }
+
+      /* Сетка для изображений */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+          "img1 img2 img3"
+          "img4 img5 img6"
+          "img7 img7 img8";
+        gap: 40px;
+      }
+
+      /* Блоки под каждое изображение */
+      .grid-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .grid-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .grid-item img:hover {
+        transform: scale(1.1); /* Увеличение размера при наведении */
+      }
+
+      .grid-item figcaption {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      /* Определяем области */
+      .img1 {
+        grid-area: img1;
+      }
+      .img2 {
+        grid-area: img2;
+      }
+      .img3 {
+        grid-area: img3;
+      }
+      .img4 {
+        grid-area: img4;
+      }
+      .img5 {
+        grid-area: img5;
+      }
+      .img6 {
+        grid-area: img6;
+      }
+      .img7 {
+        grid-area: img7;
+      }
+      .img8 {
+        grid-area: img8;
+      }
+
+      /* Футер (как в дизайне) */
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 80px;
+        color: black;
+        font-size: 15px;
+      }
+
+      .footer p {
+        margin: 5px 0;
+      }
+
+      .footer .contact-info {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+      }
+
+      /* Адаптив */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 10px;
+          padding: 20px;
+          text-align: center;
+        }
+
+        nav {
+          justify-content: center;
+        }
+
+        .content {
+          padding: 20px;
+        }
+
+        /* Сетка переходит в 1 столбец при малом экране */
+        .grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+          grid-template-areas:
+            "img1"
+            "img2"
+            "img3"
+            "img4"
+            "img5"
+            "img6"
+            "img7"
+            "img8";
+        }
+
+        .footer {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+          padding: 20px;
+        }
+
+        .footer .contact-info {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Шапка -->
+    <header>
+      <!-- Лого со ссылкой на главную -->
+      <div class="logo">
+        <a href="index.html">
+          <strong>Maria Cedersten</strong>
+        </a>
+      </div>
+      <nav>
+        <a href="cv.html">CV</a>
+        <a href="#" class="active">Portfolio</a>
+        <a href="contact.html">Yhteystiedot</a>
+      </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <div class="content">
+      <h1>Portfolio</h1>
+
+      <div class="grid">
+        <!-- 1 -->
+        <figure class="grid-item img1">
+          <a href="#">
+            <img
+              src="./03_projects/kappelimainen.png"
+              alt="Kappelimainen näyttelytila"
+            />
+          </a>
+          <figcaption>Kappelimainen näyttelytila</figcaption>
+        </figure>
+
+        <!-- 2 -->
+        <figure class="grid-item img2">
+          <a href="#">
+            <img src="./03_projects/kesamokki.png" alt="Kesämökki" />
+          </a>
+          <figcaption>Kesämökki</figcaption>
+        </figure>
+
+        <!-- 3 -->
+        <figure class="grid-item img3">
+          <a href="#">
+            <img src="./03_projects/omakotitalo.png" alt="Omakotitalo" />
+          </a>
+          <figcaption>Omakotitalo</figcaption>
+        </figure>
+
+        <!-- 4 -->
+        <figure class="grid-item img4">
+          <a href="#">
+            <img src="./03_projects/kerrostalo.png" alt="Kerrostalo" />
+          </a>
+          <figcaption>Kerrostalo</figcaption>
+        </figure>
+
+        <!-- 5 -->
+        <figure class="grid-item img5">
+          <a href="#">
+            <img src="./03_projects/paivakoti.png" alt="Päiväkoti" />
+          </a>
+          <figcaption>Päiväkoti</figcaption>
+        </figure>
+
+        <!-- 6 -->
+        <figure class="grid-item img6">
+          <a href="#">
+            <img src="./03_projects/pientaloalue.png" alt="Pientaloalue" />
+          </a>
+          <figcaption>Pientaloalue</figcaption>
+        </figure>
+
+        <!-- 7 (занимает 2 колонки) -->
+        <figure class="grid-item img7">
+          <a href="#">
+            <img
+              src="./03_projects/karjalainen.png"
+              alt="Karjalaisen kulttuurin keskus"
+            />
+          </a>
+          <figcaption>Karjalaisen kulttuurin keskus</figcaption>
+        </figure>
+
+        <!-- 8 -->
+        <figure class="grid-item img8">
+          <a href="#">
+            <img src="./03_projects/lasipaviljonki.png" alt="Lasipaviljonki" />
+          </a>
+          <figcaption>Lasipaviljonki</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Футер (как в дизайне) -->
+    <div class="footer">
+      <p>Maria Cedersten</p>
+      <p>Copyright © 2025 Maria Cedersten</p>
+      <div class="contact-info">
+        <p>+348456931300</p>
+        <p>
+          <a href="mailto:maria.cedersten@gmail.com"
+            >maria.cedersten@gmail.com</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

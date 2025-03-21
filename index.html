@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maria Cedersten</title>
+
+    <!-- Подключение шрифтов Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Adamina&family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Иконка сайта (favicon) -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <style>
+      /* Сброс и базовые стили */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Основная структура */
+      body {
+        font-family: "Adamina", serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Чтобы футер мог «прилипать» к низу при мало контента */
+        color: black;
+        font-size: 15px; /* Глобальный размер текста */
+        margin: 0;
+        overflow-x: hidden; /* Чтобы не было горизонтального скролла при анимациях */
+        background-color: rgb(255, 253, 246); /* Цвет фона */
+      }
+
+      /* Хедер */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 80px;
+        position: relative;
+        z-index: 10; /* Чтобы шапка была над параллакс-фоном */
+        background-color: rgb(255, 253, 246); /* Цвет фона */
+      }
+
+      /* Логотип 32px, без жирности */
+      header .logo a strong {
+        display: inline-block; /* Чтобы элемент был блочным для увеличения */
+        font-family: "Abril Fatface", serif;
+        font-size: 32px;
+        font-weight: normal;
+        padding: 10px;
+        text-decoration: none;
+        color: black; /* Устанавливаем черный цвет для ссылки */
+        transition: transform 0.3s ease-in-out; /* Плавный переход для изменения масштаба изображения */
+      }
+
+      /* Эффект при наведении на логотип */
+      header .logo a:hover strong {
+        transform: scale(1.2); /* Увеличение текста при наведении */
+      }
+
+      nav {
+        display: flex;
+        gap: 40px;
+      }
+      nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: 400;
+        transition: 0.3s;
+        font-size: 15px;
+      }
+      nav a:hover {
+        transform: scale(1.2); /* Увеличение размера при наведении */
+      }
+
+      /* Основной контент — «выталкивает» футер вниз */
+      .main-content {
+        flex: 1;
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .main-content img {
+        width: 100%;
+        height: auto;
+        max-width: 1000px;
+      }
+
+      /* Анимированное появление (Intersection Observer) */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Футер */
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 80px;
+        color: black;
+        font-size: 15px;
+        background-color: rgb(255, 253, 246); /* Цвет фона */
+      }
+      .footer p {
+        margin: 5px 0;
+      }
+      .footer .contact-info {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+      }
+
+      /* Мобильная адаптация */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 10px;
+          padding: 20px;
+          text-align: center;
+        }
+        nav {
+          flex-direction: row;
+          justify-content: center;
+          gap: 20px;
+        }
+
+        .parallax-content {
+          font-size: 24px;
+          padding: 20px;
+        }
+
+        .main-content {
+          margin: 20px auto;
+          padding: 0 15px;
+        }
+
+        .footer {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+          padding: 20px;
+        }
+        .footer .contact-info {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Верхний блок -->
+    <header>
+      <div class="logo">
+        <a href="index.html"><strong>Maria Cedersten</strong></a>
+      </div>
+      <nav>
+        <a href="cv.html">CV</a>
+        <a href="projects.html">Portfolio</a>
+        <a href="contact.html">Yhteystiedot</a>
+      </nav>
+    </header>
+
+    <!-- Основной контент (внутри flex-обёртки) -->
+    <div class="main-content">
+      <!-- Добавим класс fade-in для анимации появления -->
+      <img
+        src="./01_index/image.png"
+        alt="Architectural Drawing"
+        class="fade-in"
+      />
+    </div>
+
+    <!-- Футер -->
+    <div class="footer">
+      <p>Maria Cedersten</p>
+      <p>Copyright © 2025 Maria Cedersten</p>
+      <div class="contact-info">
+        <p>+348456931300</p>
+        <p>
+          <a href="mailto:maria.cedersten@gmail.com"
+            >maria.cedersten@gmail.com</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- Скрипт для Intersection Observer (плавное появление элементов при прокрутке) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const faders = document.querySelectorAll(".fade-in");
+        const options = {
+          threshold: 0.1,
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (
+          entries,
+          appearOnScroll
+        ) {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("visible");
+            appearOnScroll.unobserve(entry.target);
+          });
+        },
+        options);
+
+        faders.forEach((fader) => {
+          appearOnScroll.observe(fader);
+        });
+      });
+    </script>
+  </body>
+</html>
