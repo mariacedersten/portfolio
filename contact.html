@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>04_contact – Maria Cedersten</title>
+    <title>contact – Maria Cedersten</title>
 
     <!-- Подключение шрифтов Google Fonts -->
     <link
@@ -24,7 +24,7 @@
       html,
       body {
         font-family: "Adamina", serif;
-        background-color: white; /* Цвет фона */
+        background-color: white;
         color: black;
         font-size: 15px;
       }
@@ -152,24 +152,32 @@
           padding: 20px;
           text-align: center;
         }
+
         nav {
           justify-content: center;
         }
 
-        /* Убираем display: flex и устанавливаем блоковые элементы */
+        /* Для всего контента */
         .content {
-          display: block; /* замените flex на block */
+          display: flex;
+          flex-direction: column; /* Устанавливаем элементы в колонку */
           padding: 20px;
-          gap: 20px;
-        }
-        .map-container,
-        .contact-info-section {
-          flex: 1 1 100%;
+          gap: 20px; /* Отступы между элементами */
         }
 
-        /* Центрирование контактной информации */
+        /* Для блока с контактной информацией */
         .contact-info-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center; /* Центрируем элементы по горизонтали */
           text-align: center;
+          gap: 10px; /* Между строками */
+        }
+
+        /* Для карты */
+        .map-container {
+          width: 100%; /* На мобильных устройствах карта должна занимать всю ширину */
+          order: 2; /* Если необходимо, карта будет ниже */
         }
 
         .footer {
@@ -178,6 +186,7 @@
           gap: 10px;
           padding: 20px;
         }
+
         .footer .contact-info {
           text-align: center;
         }
@@ -188,7 +197,7 @@
     <!-- Шапка -->
     <header>
       <div class="logo">
-        <a href="index.html">
+        <a href="./index.html">
           <strong>Maria Cedersten</strong>
         </a>
       </div>
@@ -201,7 +210,12 @@
 
     <!-- Основной контент -->
     <div class="content">
-      <!-- Контактная информация теперь слева -->
+      <!-- Карта слева -->
+      <div class="map-container">
+        <img src="./04_contact/map.png" alt="Карта Espoo" />
+      </div>
+
+      <!-- Контактная информация справа -->
       <div class="contact-info-section">
         <h1>Yhteystiedot</h1>
         <p>
@@ -212,11 +226,6 @@
           ><br />
           Espoo
         </p>
-      </div>
-
-      <!-- Карта теперь справа -->
-      <div class="map-container">
-        <img src="./04_contact/map.png" alt="Карта Espoo" />
       </div>
     </div>
 

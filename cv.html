@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>02_cv – Maria Cedersten</title>
+    <title>cv – Maria Cedersten</title>
 
     <!-- Подключение шрифтов Google Fonts -->
     <link
@@ -173,24 +173,43 @@
           text-align: center;
         }
 
-        nav {
-          justify-content: center;
+        /* Убедимся, что все элементы в .grid-container идут в одну колонку */
+        .grid-container {
+          display: flex;
+          flex-direction: column; /* Все элементы идут в одну колонку */
+          gap: 20px; /* Отступы между элементами */
         }
 
-        .content {
-          padding: 20px;
+        /* Для всех колонок */
+        .column-left,
+        .column-right {
+          width: 100%; /* Делаем каждый блок шириной 100% */
+          text-align: center; /* Выравниваем текст по центру */
         }
 
-        .footer {
-          flex-direction: column;
+        /* Для каждого раздела (например, "KOULUTUS" или "TYÖKOKEMUS") */
+        h2 {
           text-align: center;
-          gap: 10px;
-          padding: 20px;
         }
+      }
 
-        .footer .contact-info {
-          text-align: center;
-        }
+      nav {
+        justify-content: center;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px;
+      }
+
+      .footer .contact-info {
+        text-align: center;
       }
     </style>
   </head>
