@@ -29,7 +29,7 @@
         font-size: 15px;
       }
 
-      body {
+     body {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -144,6 +144,7 @@
       .column-right {
         text-align: left; /* Выравнивание текста */
       }
+      
       /* Футер (как в дизайне первой страницы) */
       .footer {
         display: flex;
@@ -181,23 +182,28 @@
         }
 
         /* Для всех колонок */
-        .column-left,
-        .column-right {
-          width: 100%; /* Делаем каждый блок шириной 100% */
+        .column-left {
           text-align: center; /* Выравниваем текст по центру */
+          width: 100%;
+        }
+        .column-right {
+          text-align: justify; /* Растягивает текст по ширине контейнера */
+          width: 100%;
+          text-align: left; /* Выравнивание */
         }
 
         /* Для каждого раздела (например, "KOULUTUS" или "TYÖKOKEMUS") */
         h2 {
           text-align: center;
         }
-      }
+      
 
       nav {
         justify-content: center;
       }
 
       .content {
+        max-width: 100%;
         padding: 20px;
       }
 
@@ -211,6 +217,7 @@
       .footer .contact-info {
         text-align: center;
       }
+    }
     </style>
   </head>
   <body>
@@ -419,7 +426,7 @@
       </div>
     </div>
 
-    <!-- Футер (как в дизайне первой страницы) -->
+    <!-- Футер -->
     <div class="footer">
       <p>Maria Cedersten</p>
       <p>Copyright © 2025 Maria Cedersten</p>
@@ -431,6 +438,5 @@
           >
         </p>
       </div>
-    </div>
   </body>
 </html>
