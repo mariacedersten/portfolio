@@ -188,8 +188,11 @@
         }
         .column-right {
           text-align: justify; /* Растягивает текст по ширине контейнера */
-          width: 100%;
+          width: 100%; /* Контейнер растягивается на всю ширину */
           text-align: left; /* Выравнивание */
+          margin: 0 auto; /* Центрирование контейнера */
+          padding: 0 20px; /* Отступы с обеих сторон, чтобы текст не упирался в края */
+        
         }
 
         /* Для каждого раздела (например, "KOULUTUS" или "TYÖKOKEMUS") */
@@ -208,8 +211,10 @@
       }
 
       .grid-container2 {
-    grid-template-columns: 1fr 1fr; /* Два равных столбца */
-    justify-content: center; /* Центрирование */
+        display: grid;
+  grid-template-columns: auto auto; /* Колонки по ширине контента */
+  gap: 10px; /* Расстояние между колонками */
+  justify-content: center; /* Центрирование контейнера */
   }
   
   .grid-container2 .column-left {
